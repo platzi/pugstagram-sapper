@@ -23,7 +23,7 @@ module.exports = {
             loader: 'svelte-loader',
             options: {
               dev,
-              hydrateble: true,
+              hydratable: true,
               hotReload: false
             }
           }
@@ -34,7 +34,7 @@ module.exports = {
     plugins: [
       new webpack.DefinePlugin({
         'process.browser': true,
-        'process.env.NODE_EN': JSON.stringify(mode)
+        'process.env.NODE_ENV': JSON.stringify(mode)
       }),
     ].filter(Boolean),
     devtool: dev && 'inline-source-map'
@@ -45,7 +45,7 @@ module.exports = {
     output: config.server.output(),
     target: 'node',
     resolve: { alias, extensions, mainFields },
-    externals: Object.keys(pkd.despendencies).concat('encoding'),
+    externals: Object.keys(pkg.dependencies).concat('encoding'),
     module: {
       rules: [
         {
@@ -62,7 +62,7 @@ module.exports = {
       ]
     },
     mode: process.env.NODE_ENV,
-    performace: {
+    performance: {
       hints: false
     }
   },

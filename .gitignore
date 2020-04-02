@@ -109,3 +109,7 @@ tmp/
 temp/
 
 # End of https://www.gitignore.io/api/node
+
+#sapper
+src/node_modules
+__sapper__
