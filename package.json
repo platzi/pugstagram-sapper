@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server --open --mode development"
+    "dev": "sapper dev",
+    "build": "sapper build",
+    "export": "sapper export",
+    "start": "node __sapper__/build"
   },
   "author": "Oscar Barajas <oscar@platzi.com>",
   "license": "MIT",
   "dependencies": {
+    "compression": "^1.7.4",
+    "polka": "^0.5.2",
+    "sirv": "^0.4.2",
     "svelte": "^3.18.2"
   },
   "devDependencies": {
@@ -18,6 +23,7 @@
     "@babel/preset-env": "^7.8.4",
     "babel-loader": "^8.0.6",
     "html-webpack-plugin": "^3.2.0",
+    "sapper": "^0.27.12",
     "svelte-loader": "^2.13.6",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
